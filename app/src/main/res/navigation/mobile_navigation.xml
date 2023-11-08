@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.martintecno.inmobiliarialab3.ui.home.HomeFragment"
+        android:label="Ubicacion de la inmobiliaria"
+        tools:layout="@layout/fragment_home" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.martintecno.inmobiliarialab3.MainActivity"
+        android:label="app_bar_main"
+        tools:layout="@layout/app_bar_main" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.martintecno.inmobiliarialab3.ui.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.martintecno.inmobiliarialab3.ui.perfil.PerfilFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <!--controlar esto siempre ( android:id )  -->
+    <fragment
+        android:id="@+id/nav_inmueble"
+        android:name="com.martintecno.inmobiliarialab3.ui.Inmueble.InmuebleFragment"
+        android:label="Inmuebles"
+        tools:layout="@layout/fragment_inmueble" >
+        <action
+            android:id="@+id/action_nav_inmueble_to_detalleInmuebleFragment"
+            app:destination="@id/detalleInmuebleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleInmuebleFragment"
+        android:name="com.martintecno.inmobiliarialab3.ui.Inmueble.detalle.DetalleInmuebleFragment"
+        android:label="Detalle del inmueble"
+        tools:layout="@layout/fragment_detalle_inmueble" >
+        <action
+            android:id="@+id/action_detalleInmuebleFragment_to_nav_inmueble"
+            app:destination="@id/nav_inmueble" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_inquilino"
+        android:name="com.martintecno.inmobiliarialab3.ui.inquilino.InquilinoFragment"
+        android:label="Inquilinos"
+        tools:layout="@layout/fragment_inquilino" >
+        <action
+            android:id="@+id/action_nav_inquilino_to_detalleInquilinoFragment"
+            app:destination="@id/detalleInquilinoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleInquilinoFragment"
+        android:name="com.martintecno.inmobiliarialab3.ui.inquilino.detalle.DetalleInquilinoFragment"
+        android:label="Detalle del inquilino"
+        tools:layout="@layout/fragment_detalle_inquilino" >
+        <action
+            android:id="@+id/action_detalleInquilinoFragment_to_nav_inquilino"
+            app:destination="@id/nav_inquilino" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_contrato"
+        android:name="com.martintecno.inmobiliarialab3.ui.contrato.ContratoFragment"
+        android:label="Contratos"
+        tools:layout="@layout/fragment_contrato" >
+        <action
+            android:id="@+id/action_nav_contrato_to_detalleContratoFragment"
+            app:destination="@id/detalleContratoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleContratoFragment"
+        android:name="com.martintecno.inmobiliarialab3.ui.contrato.detalle.DetalleContratoFragment"
+        android:label="Detalles del contrato"
+        tools:layout="@layout/fragment_detalle_contrato" >
+        <action
+            android:id="@+id/action_detalleContratoFragment_to_listaPagosFragment"
+            app:destination="@id/listaPagosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaPagosFragment"
+        android:name="com.martintecno.inmobiliarialab3.ui.contrato.detalle.pago.ListaPagosFragment"
+        android:label="Lista de pagos"
+        tools:layout="@layout/fragment_lista_pagos" >
+        <action
+            android:id="@+id/action_listaPagosFragment_to_detalleContratoFragment"
+            app:destination="@id/detalleContratoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_salir"
+        android:name="com.martintecno.inmobiliarialab3.ui.salir.salirFragment"
+        android:label="Salir"
+        tools:layout="@layout/fragment_salir" />
+    <fragment
+        android:id="@+id/agregarInmuebleFragment"
+        android:name="com.martintecno.inmobiliarialab3.ui.Inmueble.agregar.AgregarInmuebleFragment"
+        android:label="Formulario para agregar inmueble"
+        tools:layout="@layout/fragment_agregar_inmueble" >
+        <action
+            android:id="@+id/action_agregarInmuebleFragment_to_nav_inmueble"
+            app:destination="@id/nav_inmueble" />
+    </fragment>
+
+</navigation>
